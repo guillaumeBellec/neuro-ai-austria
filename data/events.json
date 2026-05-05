@@ -2,6 +2,12 @@
   {
     "date": "2026-06-17",
     "title": "Neuro-AI Vienna Seminar (17–19 June)",
-    "location": "Krieglach, Austria"
+    "location": "Krieglach, Austria",
+    "agenda": [
+      "Wednesday 14h–19h — Talks on AI for neuroscience",
+      "Thursday 9h30–12h — Group hike",
+      "Thursday 14h–19h — Workshop: Brain computation theory",
+      "Friday 9h30–12h — Neuro-AI hackathon"
+    ]
   }
 ]

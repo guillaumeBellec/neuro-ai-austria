@@ -73,6 +73,23 @@
       meta.textContent = metaParts.join(' · ');
       li.appendChild(meta);
     }
+
+    if (Array.isArray(e.agenda) && e.agenda.length) {
+      const det = document.createElement('details');
+      det.className = 'ev-agenda';
+      const sum = document.createElement('summary');
+      sum.textContent = 'Agenda';
+      det.appendChild(sum);
+      const ul = document.createElement('ul');
+      for (const line of e.agenda) {
+        const item = document.createElement('li');
+        item.textContent = line;
+        ul.appendChild(item);
+      }
+      det.appendChild(ul);
+      li.appendChild(det);
+    }
+
     return li;
   }
 

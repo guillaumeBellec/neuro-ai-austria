@@ -78,7 +78,10 @@
     mouse.x += (mouse.tx - mouse.x) * 0.07;
     mouse.y += (mouse.ty - mouse.y) * 0.07;
 
-    if (t - lastSpawn > 700) { spawnWave(); lastSpawn = t; }
+    // Spawn rate scales with screen area so big monitors don't look empty.
+    const baseArea = 1280 * 800;
+    const interval = Math.max(260, 650 / Math.sqrt((W * H) / baseArea));
+    if (t - lastSpawn > interval) { spawnWave(); lastSpawn = t; }
 
     const maxR = Math.hypot(W, H) * 1.4;
     for (const w of waves) {

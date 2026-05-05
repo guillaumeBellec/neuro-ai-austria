@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neuro-AI Austria</title>
+  <meta name="description" content="Neuro-AI research community in Austria — talks, events, and a bridge between neuroscience and AI.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="cortex" aria-hidden="true"></canvas>
+
+  <main>
+    <header class="hero">
+      <h1>Neuro-AI Austria</h1>
+    </header>
+
+    <section class="intro">
+      <p>
+        <strong>Neuro-AI</strong> brings together two complementary directions:
+        the use of <em>AI to analyse and model neuroscience data</em>,
+        and <em>computational research aimed at understanding the principles of brain computation</em>.
+        Insights flow in both directions — biological circuits inspire new models, and machine learning theory sharpens our questions about the brain.
+      </p>
+
+      <!-- Bidirectional diagram: biological NN <-> equations + computer -->
+      <figure class="bridge" aria-label="Bidirectional relationship between biological neural networks and computational models">
+        <svg viewBox="0 0 520 160" role="img" aria-hidden="true">
+          <!-- Left: biological neural network -->
+          <g class="bio">
+            <!-- soft cell bodies -->
+            <circle cx="40"  cy="50"  r="6"/>
+            <circle cx="80"  cy="30"  r="6"/>
+            <circle cx="80"  cy="80"  r="6"/>
+            <circle cx="120" cy="55"  r="6"/>
+            <circle cx="60"  cy="115" r="6"/>
+            <circle cx="115" cy="110" r="6"/>
+            <!-- dendritic / axonal connections -->
+            <path d="M40,50 C60,40 70,30 80,30" />
+            <path d="M40,50 C60,65 70,75 80,80" />
+            <path d="M80,30 C100,40 110,50 120,55" />
+            <path d="M80,80 C100,70 110,60 120,55" />
+            <path d="M80,80 C70,95 65,105 60,115" />
+            <path d="M120,55 C120,80 118,95 115,110" />
+            <path d="M60,115 C85,115 100,113 115,110" />
+            <text x="80" y="150" text-anchor="middle" class="label">biological neural network</text>
+          </g>
+
+          <!-- Double-headed arrow -->
+          <g class="arrow">
+            <line x1="180" y1="75" x2="340" y2="75" />
+            <polygon points="180,75 195,68 195,82" />
+            <polygon points="340,75 325,68 325,82" />
+          </g>
+
+          <!-- Right: equations + computer -->
+          <g class="model">
+            <text x="430" y="55" text-anchor="middle" class="eq">
+              <tspan>τ</tspan>
+              <tspan dx="2">dV</tspan>
+              <tspan dx="2">/</tspan>
+              <tspan dx="2">dt</tspan>
+              <tspan dx="6">=</tspan>
+              <tspan dx="6">−V + W·x</tspan>
+            </text>
+            <!-- chip / computer icon -->
+            <g transform="translate(395,75)">
+              <rect x="0" y="0" width="70" height="50" rx="4" />
+              <rect x="10" y="10" width="50" height="30" rx="2" class="chip-inner"/>
+              <!-- pins -->
+              <line x1="-6" y1="14" x2="0" y2="14"/>
+              <line x1="-6" y1="26" x2="0" y2="26"/>
+              <line x1="-6" y1="38" x2="0" y2="38"/>
+              <line x1="70" y1="14" x2="76" y2="14"/>
+              <line x1="70" y1="26" x2="76" y2="26"/>
+              <line x1="70" y1="38" x2="76" y2="38"/>
+            </g>
+            <text x="430" y="150" text-anchor="middle" class="label">equations &amp; computer models</text>
+          </g>
+        </svg>
+      </figure>
+    </section>
+
+    <section id="events" class="events">
+      <h2>Upcoming events &amp; talks</h2>
+      <ul id="events-upcoming" class="event-list"></ul>
+
+      <details class="past">
+        <summary>Past events</summary>
+        <ul id="events-past" class="event-list"></ul>
+      </details>
+
+    </section>
+  </main>
+
+  <script src="js/cortex.js" defer></script>
+  <script src="js/events.js" defer></script>
+</body>
+</html>
